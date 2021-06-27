@@ -1,9 +1,12 @@
+# 45, 47
 # 41. upper 메서드
 '''
 다음과 같은 문자열이 있을 때 이를 대문자 BTC_KRW로 변경하세요.
 
 ticker = "btc_krw"
 '''
+ticker = "btc_krw"
+print(ticker.upper())
 
 # 42. lower 메서드
 '''
@@ -11,8 +14,12 @@ ticker = "btc_krw"
 
 ticker = "BTC_KRW"
 '''
+ticker = "BTC_KRW"
+print(ticker.lower())
 
-# 43. 043 capitalize 메서드: 문자열 'hello'가 있을 때 이를 'Hello'로 변경해보세요.
+# 43. capitalize 메서드: 문자열 'hello'가 있을 때 이를 'Hello'로 변경해보세요.
+hello = 'hello'
+print(hello.capitalize())
 
 # 44. endswith 메서드
 '''
@@ -20,6 +27,8 @@ ticker = "BTC_KRW"
 
 file_name = "보고서.xlsx"
 '''
+file_name = "보고서.xlsx"
+print(file_name.endswith('xlsx'))
 
 # 45. endswith 메서드
 '''
@@ -27,6 +36,7 @@ file_name = "보고서.xlsx"
 
 file_name = "보고서.xlsx"
 '''
+file_name = "보고서.xlsx"
 
 # 46. startswith 메서드
 '''
@@ -34,13 +44,17 @@ file_name = "보고서.xlsx"
 
 file_name = "2020_보고서.xlsx"
 '''
+file_name = "2020_보고서.xlsx"
+print(file_name.startswith('2020'))
 
 # 47. split 메서드
 '''
-다음과 같은 문자열이 있을 때 공백을 기준으로 문자열을 나눠보세요.
+다음과 같은 문자열이 있을 때 공백을 기준으로 문자열을 나눠보세요.(단, ' '는 사용하지 말 것)
 
 a = "hello world"
 '''
+a = "hello world"
+
 
 # 48. split 메서드
 '''
@@ -48,6 +62,8 @@ a = "hello world"
 
 ticker = "btc_krw"
 '''
+ticker = "btc_krw"
+print(ticker.split('_'))
 
 # 49. split 메서드
 '''
@@ -55,6 +71,11 @@ ticker = "btc_krw"
 
 date = "2020-05-01"
 '''
+date = "2020-05-01"
+splitdate = date.split('-')
+for target in splitdate:
+    year, month, day = splitdate
+print(f'년도: {year}, 월: {month}, 일: {day}')
 
 # 50. rstrip 메서드
 '''
@@ -62,3 +83,5 @@ date = "2020-05-01"
 
 data = "039490     "
 '''
+data = "039490     "
+print(data.rstrip())
