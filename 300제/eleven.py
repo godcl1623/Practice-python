@@ -23,23 +23,29 @@ print(2 + 2 * 3 )
 >> print (type(a))
 <class 'int'>
 '''
-# 아래 변수에 바인딩된 값의 타입을 판별해보세요. - print(type(a))
+# 아래 변수에 바인딩된 값의 타입을 판별해보세요.
 a = "132"
-type(a)
+print(type(a))
 
-# 16. 문자열 '720'를 정수형으로 변환해보세요. - 1. 변수 할당 2. 변수에 int() 적용 후 변수에 할당 3. print type
-int('720')
+# 16. 문자열 '720'를 정수형으로 변환해보세요.
+target = '720'
+result = int(target)
+print(result, type(result))
 
 # 17. 정수 100을 문자열 '100'으로 변환해보세요.
-str(100)
+target = 100
+result = str(target)
+print(result, type(result))
 
 # 18. 문자열 "15.79"를 실수(float) 타입으로 변환해보세요.
-float("15.79")
+target = '15.79'
+result = float(target)
+print(result, type(result))
 
 # 19. year라는 변수가 문자열 타입의 연도를 바인딩하고 있습니다. 이를 정수로 변환한 후 최근 3년의 연도를 화면에 출력해보세요.
-year = "2020"
-int_year = int(year)
-print(int_year - 1, int_year, int_year + 1)
+year = '2021'
+result = int(year)
+print(result - 2, result - 1, result)
 
 # 20. 에이컨이 월 48,584원에 무이자 36개월의 조건으로 홈쇼핑에서 판매되고 있습니다. 총 금액은 계산한 후 이를 화면에 출력해보세요. (변수사용하기)
 월납부액 = 48584
