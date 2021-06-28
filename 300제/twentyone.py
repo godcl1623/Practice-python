@@ -1,4 +1,9 @@
-# 22, 23, 24, 27, 28, 29 다시 풀기
+# 28 다시 풀기
+'''
+오답현황(~210628)
+22~24, 27, 29: 1번
+28: 2번
+'''
 # 21. 문자열 인덱싱: letters가 바인딩하는 문자열에서 첫번째와 세번째 문자를 출력하세요.
 '''
 >> letters = 'python'
@@ -15,6 +20,7 @@ print(letters[0], letters[2])
 실행 예: 2210
 '''
 license_plate = "24가 2210"
+print(license_plate[-4:])
 
 # 23. 023 문자열 인덱싱: 아래의 문자열에서 '홀' 만 출력하세요. (추가 조건: 조건문 쓰지 말것)(힌트: 슬라이스랑 비슷)
 '''
@@ -23,6 +29,7 @@ license_plate = "24가 2210"
 홀홀홀
 '''
 string = "홀짝홀짝홀짝"
+print(string[::2])
 
 # 24. 024 문자열 슬라이싱: 문자열을 거꾸로 뒤집어 출력하세요. (추가 조건: 조건문 쓰지 말것)(힌트: 23번이랑 비슷)
 '''
@@ -31,6 +38,7 @@ string = "홀짝홀짝홀짝"
 NOHTYP
 '''
 string = "PYTHON"
+print(string[::-1])
 
 # 25. 문자열 치환: 아래의 전화번호에서 하이푼 ('-')을 제거하고 출력하세요.
 '''
@@ -55,10 +63,9 @@ print(phone_number.replace('-', ''))
 kr
 '''
 url = "http://sharebook.kr"
-result = url[17:]
-print(result)
+print(url.split('.')[1])
 
-# 28. 문자열은 immutable: 아래 코드의 실행 결과를 예상해보세요. (힌트: 한 번 더 생각해 볼 것)
+# 28. 문자열은 immutable: 아래 코드의 실행 결과를 예상해보세요. (힌트: 한 번 더 생각해 볼 것, 틀린 이유와 함께 답이 떠오른게 아니면 무조건 틀렸음)
 '''
 >> lang = 'python'
 >> lang[0] = 'P'
@@ -72,6 +79,7 @@ print(result)
 Abcdfe2A354A32A
 '''
 string = 'abcdfe2a354a32a'
+print(string.replace('a', 'A'))
 
 # 30. replace 메서드: 아래 코드의 실행 결과를 예상해보세요.
 '''

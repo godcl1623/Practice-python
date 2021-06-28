@@ -1,4 +1,9 @@
-# 45, 47
+# 45번 다시 풀기(210628)
+'''
+오답 현황(~210628)
+45번 - 2번
+47번 - 1번
+'''
 # 41. upper 메서드
 '''
 다음과 같은 문자열이 있을 때 이를 대문자 BTC_KRW로 변경하세요.
@@ -37,6 +42,7 @@ print(file_name.endswith('xlsx'))
 file_name = "보고서.xlsx"
 '''
 file_name = "보고서.xlsx"
+print(file_name.endswith(('xlsx', 'xls')))
 
 # 46. startswith 메서드
 '''
@@ -54,7 +60,7 @@ print(file_name.startswith('2020'))
 a = "hello world"
 '''
 a = "hello world"
-
+print(a.split())
 
 # 48. split 메서드
 '''
