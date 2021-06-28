@@ -1,7 +1,16 @@
 '''
+오답현황(~210628)
+73
+77
+78
+80
+'''
+'''
 071
 my_variable 이름의 비어있는 튜플을 만들라.
 '''
+my_variable = ()
+print(my_variable)
 
 '''
 072
@@ -12,11 +21,14 @@ my_variable 이름의 비어있는 튜플을 만들라.
 2	스플릿
 3	럭키
 '''
+movie_rank = ('닥터 스트레인지', '스플릿', '럭키')
+print(movie_rank)
 
 '''
 073
 숫자 1 이 저장된 튜플을 생성하라.
 '''
+
 
 '''
 074
@@ -29,6 +41,7 @@ Traceback (most recent call last):
     t[0] = 'a'
 TypeError: 'tuple' object does not support item assignment
 '''
+# 정답: 튜플의 값은 변경할 수 없다
 
 '''
 075
@@ -37,6 +50,7 @@ TypeError: 'tuple' object does not support item assignment
 t = 1, 2, 3, 4
 '''
 t = 1, 2, 3, 4
+# 정답: 튜플
 
 '''
 076
@@ -45,6 +59,8 @@ t = 1, 2, 3, 4
 t = ('a', 'b', 'c')
 '''
 t = ('a', 'b', 'c')
+t = ('A', 'b', 'c')
+print(t)
 
 '''
 077
@@ -53,6 +69,7 @@ t = ('a', 'b', 'c')
 interest = ('삼성전자', 'LG전자', 'SK Hynix')
 '''
 interest = ('삼성전자', 'LG전자', 'SK Hynix')
+
 
 '''
 078
@@ -70,6 +87,7 @@ temp = ('apple', 'banana', 'cake')
 a, b, c = temp
 print(a, b, c)
 '''
+# 정답: apple banana cake
 
 '''
 080 range 함수
