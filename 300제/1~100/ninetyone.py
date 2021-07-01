@@ -1,10 +1,10 @@
 '''
-오답현황(~210628)
+오답현황(~210701)
 92
 95
 96
-99
-100
+99 2번
+100 2번
 '''
 '''
 091 딕셔너리 생성
@@ -35,7 +35,8 @@ inventory = {"메로나": [300, 20],
 inventory = {"메로나": [300, 20],
     "비비빅": [400, 3],
     "죠스바": [250, 100]}
-print(inventory['메로나'][0])
+print('92번', inventory['메로나'][0])
+
 
 '''
 093 딕셔너리 인덱싱
@@ -85,7 +86,7 @@ print(list(keys))
 '''
 icecream = {'탱크보이': 1200, '폴라포': 1200, '빵빠레': 1800, '월드콘': 1500, '메로나': 1000}
 values = icecream.values()
-print(values)
+print(list(values))
 
 '''
 097 딕셔너리 values() 메서드
@@ -115,7 +116,7 @@ icecream.update(new_product)
 print(icecream)
 
 '''
-099 zip과 dict
+099
 아래 두 개의 튜플을 하나의 딕셔너리로 변환하라. keys를 키로, vals를 값으로 result 이름의 딕셔너리로 저장한다.
 
 keys = ("apple", "pear", "peach")
@@ -129,7 +130,7 @@ vals = (300, 250, 400)
 
 
 '''
-100 zip과 dict
+100
 date와 close_price 두 개의 리스트를 close_table 이름의 딕셔너리로 생성하라.
 
 date = ['09/05', '09/06', '09/07', '09/08', '09/09']

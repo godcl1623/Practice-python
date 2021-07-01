@@ -1,29 +1,32 @@
 '''
-오답현황(~210628)
-81~83
+오답현황(~210701)
+81~83 2번
 '''
 '''
-081 별 표현식
-다음과 같이 10개의 값이 저장된 scores 리스트가 있을 때, start expression을 사용하여 좌측 8개의 값을 valid_score 변수에 바인딩하여라.
+081
+다음과 같이 10개의 값이 저장된 scores 리스트가 있을 때, 좌측 8개의 값을 valid_score 변수에 바인딩하여라.
 
 scores = [8.8, 8.9, 8.7, 9.2, 9.3, 9.7, 9.9, 9.5, 7.8, 9.4]
 '''
 scores = [8.8, 8.9, 8.7, 9.2, 9.3, 9.7, 9.9, 9.5, 7.8, 9.4]
-
+*valid_score, a, b = scores
+print(valid_score)
 
 '''
 082
-다음과 같이 10개의 값이 저장된 scores 리스트가 있을 때, start expression을 사용하여 우측 8개의 값을 valid_score 변수에 바인딩하여라.
+다음과 같이 10개의 값이 저장된 scores 리스트가 있을 때, 우측 8개의 값을 valid_score 변수에 바인딩하여라.
 '''
 scores = [8.8, 8.9, 8.7, 9.2, 9.3, 9.7, 9.9, 9.5, 7.8, 9.4]
-
+a, b, *valid_score = scores
+print(valid_score)
 
 '''
 083
-다음과 같이 10개의 값이 저장된 scores 리스트가 있을 때, start expression을 사용하여 가운데 있는 8개의 값을 valid_score 변수에 바인딩하여라.
+다음과 같이 10개의 값이 저장된 scores 리스트가 있을 때, 가운데 있는 8개의 값을 valid_score 변수에 바인딩하여라.
 '''
 scores = [8.8, 8.9, 8.7, 9.2, 9.3, 9.7, 9.9, 9.5, 7.8, 9.4]
-
+a, *valid_score, b = scores
+print(valid_score)
 
 '''
 084 비어있는 딕셔너리

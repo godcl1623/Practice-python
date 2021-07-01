@@ -29,6 +29,8 @@ print(movie_rank)
 movie_rank 리스트에는 아래와 같이 네 개의 영화 제목이 바인딩되어 있다. "슈퍼맨"을 "닥터 스트레인지"와 "스플릿" 사이에 추가하라.(단, slice 사용 금지)
 '''
 movie_rank = ['닥터 스트레인지', '스플릿', '럭키', '배트맨']
+movie_rank.insert(1, '슈퍼맨')
+print('53번', movie_rank)
 
 '''
 054
@@ -71,6 +73,7 @@ max:  7
 min:  1
 '''
 nums = [1, 2, 3, 4, 5, 6, 7]
+print('57번', max(nums), min(nums))
 
 '''
 058
@@ -81,6 +84,7 @@ nums = [1, 2, 3, 4, 5]
 15
 '''
 nums = [1, 2, 3, 4, 5]
+print('58번', sum(nums))
 
 '''
 059
@@ -98,3 +102,4 @@ nums = [1, 2, 3, 4, 5]
 3.0
 '''
 nums = [1, 2, 3, 4, 5]
+print('60번', sum(nums) / len(nums))
