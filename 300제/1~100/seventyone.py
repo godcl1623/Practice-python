@@ -1,9 +1,9 @@
 '''
-오답현황(~210628)
-73
+오답현황(~210721)
+73 2번
 77
 78
-80
+80 2번
 '''
 '''
 071
@@ -28,8 +28,6 @@ print(movie_rank)
 073
 숫자 1 이 저장된 튜플을 생성하라.
 '''
-result = (1, )
-print('73번', result, type(result))
 
 '''
 074
@@ -70,9 +68,6 @@ print(t)
 interest = ('삼성전자', 'LG전자', 'SK Hynix')
 '''
 interest = ('삼성전자', 'LG전자', 'SK Hynix')
-result = list(interest)
-print('77번', result, type(result))
-
 
 '''
 078
@@ -81,8 +76,6 @@ print('77번', result, type(result))
 interest = ['삼성전자', 'LG전자', 'SK Hynix']
 '''
 interest = ['삼성전자', 'LG전자', 'SK Hynix']
-result = tuple(interest)
-print('78번', result, type(result))
 
 '''
 079 튜플 언팩킹
@@ -100,5 +93,3 @@ print(a, b, c)
 
 (2, 4, 6, 8 ... 98)
 '''
-result = range(2, 100, 2)
-print(tuple(result))

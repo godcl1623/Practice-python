@@ -1,6 +1,6 @@
 # 45번 다시 풀기(210628)
 '''
-오답 현황(~210628)
+오답 현황(~210721)
 45번 - 2번
 47번 - 1번
 '''
@@ -43,7 +43,6 @@ file_name = "보고서.xlsx"
 '''
 file_name = "보고서.xlsx"
 
-
 # 46. startswith 메서드
 '''
 파일 이름이 문자열로 저장되어 있을 때 startswith 메서드를 사용해서 파일 이름이 '2020'로 시작하는지 확인해보세요.
@@ -60,7 +59,7 @@ print(file_name.startswith('2020'))
 a = "hello world"
 '''
 a = "hello world"
-
+print('47번', a.split())
 
 # 48. split 메서드
 '''
