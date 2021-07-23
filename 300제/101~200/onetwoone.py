@@ -1,11 +1,5 @@
 '''
 오답현황(~210701)
-121
-123
-125
-126
-128
-129
 전체 문제 힙쳐서 10분 이내로 풀도록 다시 복습
 '''
 '''
@@ -15,7 +9,13 @@
 >> a
 A
 '''
-
+"""
+foo = input();
+if foo.islower():
+    print('convert to upper case: ', foo.upper());
+else:
+    print('convert to lower case: ', foo.lower());
+"""
 
 '''
 122
@@ -31,17 +31,19 @@ A
 grade is A
 '''
 """
-z = input('score: ')
-if int(z) <= 20:
-    print('E')
-elif int(z) <= 40:
-    print('D')
-elif int(z) <= 60:
-    print('C')
-elif int(z) <= 80:
-    print('B')
+foo = input('점수를 입력해주세요: ');
+if 0 <= int(foo) <= 20:
+    print('등급은 E 입니다.');
+elif 21 <= int(foo) <= 40:
+    print('등급은 D 입니다.');
+elif 41 <= int(foo) <= 60:
+    print('등급은 C 입니다.');
+elif 61 <= int(foo) <= 80:
+    print('등급은 B 입니다.');
+elif 81 <= int(foo) <= 100:
+    print('등급은 A 입니다.');
 else:
-    print('A')
+    print('올바른 점수를 입력해 주세요.');
 """
 
 '''
@@ -56,10 +58,21 @@ else:
 >> 입력: 100 달러
 116700.00 원
 '''
-
+"""
+환율표 = {
+    '달러': 1167,
+    '엔': 1.096,
+    '유로': 1268,
+    '위안': 171
+}
+foo = input('금액: ');
+bar = foo.split();
+[money, unit] = bar;
+print(f'{float(money) * 환율표[unit]} 원');
+"""
 
 '''
-124
+124 - 못 품
 사용자로부터 세 개의 숫자를 입력 받은 후 가장 큰 숫자를 출력하라.
 
 >> input number1: 10
@@ -68,11 +81,10 @@ else:
 20
 '''
 """
-a = input('number1: ')
-b = input('number2: ')
-c = input('number3: ')
-result = [int(a), int(b), int(c)]
-print(max(result))
+foo = input('첫 번째 숫자를 입력해주세요: ');
+bar = input('두 번째 숫자를 입력해주세요: ');
+baz = input('세 번째 숫자를 입력해주세요: ');
+print(f'가장 큰 숫자는 {max(iterable)} 입니다.');
 """
 
 '''
@@ -88,21 +100,17 @@ print(max(result))
 당신은 SKT 사용자입니다.
 '''
 """
-z = input('휴대전화 번호 입력: ')
-y = z.split('-')
-def x(통신사):
-    print(f'당신은 {통신사} 사용자입니다.')
-
-if y[0] == '011':
-    x('SKT')
-elif y[0] == '016':
-    x('KT')
-elif y[0] == '019':
-    x('LGU')
+foo = input('휴대전화 번호 입력: ');
+bar = foo.split('-');
+if bar[0] == '011':
+    print('통신사는 SKT입니다.');
+elif bar[0] == '016':
+    print('통신사는 KT입니다.');
+elif bar[0] == '019':
+    print('통신사는 LGU입니다.');
 else:
-    x('알수없음')
+    print('알 수 없음');
 """
-
 
 '''
 126
@@ -116,18 +124,16 @@ else:
 도봉구
 '''
 """
-z = input('우편번호: ')
-
-if z[:2] == '01':
-    if int(z[2]) in list(range(0, 3)):
-        print('강북구')
-    elif int(z[2]) in list(range(3, 6)):
-        print('도봉구')
-    elif int(z[2]) in list(range(6, 10)):
-        print('노원구')
+foo = input('우편번호: ');
+bar = foo[0:3];
+if 0 <= int(bar[2]) <= 2:
+    print('강북구');
+elif 3 <= int(bar[2]) <= 5:
+    print('도봉구');
 else:
-    print('우편번호는 "01"로 시작해야 합니다.')
+    print('노원구');
 """
+
 
 '''
 127
@@ -137,17 +143,21 @@ else:
 남자
 '''
 """
-z = input('주민등록번호: ')
-y = z.split('-')
-if len(z) == 14:
-    if y[1][0] == '1' or y[1][0] == '3':
-        print('남자')
-    elif y[1][0] == '2' or y[1][0] == '4':
-        print('여자')
+foo = input('주민등록번호: ');
+def doh(baz):
+    if baz == '1' or baz == '3':
+        print('남자');
+    elif baz == '2' or baz == '4':
+        print('여자');
     else:
-        print('올바른 주민등록번호가 아닙니다.')
+        print('올바른 주민등록번호가 아닙니다.');
+if foo[6] != '-':
+    baz = foo[6];
+    doh(baz);
 else:
-    print('올바른 주민등록번호가 아닙니다.')
+    bar = foo.split('-');
+    baz = bar[1][0];
+    doh(baz);
 """
 
 '''
@@ -162,7 +172,21 @@ else:
 >> 주민등록번호: 861010-1015210
 서울 입니다.
 '''
-
+"""
+foo = input('주민등록번호: ');
+def doh(baz):
+    if 0 <= int(baz) <= 8:
+        print('서울 입니다.');
+    else:
+        print('서울이 아닙니다.');
+if foo[6] != '-':
+    baz = foo[7:9];
+    doh(baz);
+else:
+    bar = foo.split('-');
+    baz = bar[1][1:3];
+    doh(baz);
+"""
 
 '''
 129
@@ -180,6 +204,7 @@ x 2 3 4 5 6 7   8 9 2 3 4 5
 >> 주민등록번호: 821010-1635210
 유효하지 않은 주민등록번호입니다. 
 '''
+foo = input('주민등록번호: ');
 
 
 '''
@@ -196,45 +221,3 @@ closing_price	최근 24시간 내 마지막 거래금액
 min_price	최근 24시간 내 최저 거래금액
 max_price	최근 24시간 내 최고 거래금액
 '''
-# import requests
-# btc = requests.get("https://api.bithumb.com/public/ticker/").json()['data']
-# 시가 = int(btc['opening_price'])
-# 종가 = int(btc['closing_price'])
-# 최고가 = int(btc['max_price'])
-# 최저가 = int(btc['min_price'])
-# 변동폭 = 최고가 - 최저가
-# if (시가 + 변동폭) > 최고가:
-#     print('상승장')
-# else:
-#     print('하락장')
-
-
-
-
-
-
-
-
-
-
-# 129번 원래 작성했던 답안
-"""
-z = input('주민등록번호: ')
-y = ''.join(z.split('-'))
-x = list(range(2, 10)) # 2, 3, 4, 5, 6, 7, 8, 9
-i = 0
-arr = []
-while i < len(y) - 1:
-    if (i < 8):
-        arr.append(int(y[i]) * x[i])
-        i += 1
-    else:
-        arr.append(int(y[i]) * x[i - 8])
-        i += 1
-first = sum(arr) % 11
-second = 11 - first
-if str(second) == y[-1]:
-    print('유효한 주민등록번호입니다.')
-else:
-    print('유효하지 않은 주민등록번호입니다.')
-"""
