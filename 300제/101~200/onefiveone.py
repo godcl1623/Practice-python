@@ -1,6 +1,10 @@
 '''
-오답현황(~)
+오답현황(~210725)
+오답 없음
 
+다시 풀어보기(~210725)
+156
+157
 '''
 '''
 151
@@ -12,6 +16,10 @@ for문을 사용해서 리스트의 음수를 출력하라.
 -20
 -3
 '''
+리스트 = [3, -20, -3, 44]
+for 변수 in 리스트:
+    if 변수 < 0:
+        print('151, ', 변수);
 
 '''
 152
@@ -20,6 +28,10 @@ for문을 사용해서 3의 배수만을 출력하라.
 리스트 = [3, 100, 23, 44]
 3
 '''
+리스트 = [3, 100, 23, 44]
+for 변수 in 리스트:
+    if 변수 % 3 == 0:
+        print('152, ', 변수);
 
 '''
 153
@@ -29,6 +41,10 @@ for문을 사용해서 3의 배수만을 출력하라.
 12
 18
 '''
+리스트 = [13, 21, 12, 14, 30, 18]
+for 변수 in 리스트:
+    if 변수 < 20 and 변수 % 3 == 0:
+        print(f'153, {변수}')
 
 '''
 154
@@ -39,6 +55,10 @@ study
 python
 language
 '''
+리스트 = ["I", "study", "python", "language", "!"]
+for var in 리스트:
+    if len(var) >= 3:
+        print(f'154, {var}')
 
 '''
 155
@@ -56,19 +76,24 @@ True
 >> 변수.isupper()
 False
 '''
+리스트 = ["A", "b", "c", "D"]
+for var in 리스트:
+    if var.isupper():
+        print(f'155, {var}')
 
 '''
 156
-리스트에서 소문자만 화면에 출력하라.
+리스트에서 소문자만 화면에 출력하라.(islower 없이 3가지 방법으로 풀어보기)
 
 리스트 = ["A", "b", "c", "D"]
 b
 c
 '''
+리스트 = ["A", "b", "c", "D"]
 
 '''
 157
-이름의 첫 글자를 대문자로 변경해서 출력하라.
+이름의 첫 글자를 대문자로 변경해서 출력하라.(단, 리스트 제외 2줄로 출력 + replace 사용하지 말고 풀어보기)
 
 리스트 = ['dog', 'cat', 'parrot']
 Dog
@@ -83,6 +108,8 @@ A
 >> 변수.upper()
 ABC
 '''
+리스트 = ['dog', 'cat', 'parrot']
+
 
 '''
 158
@@ -93,6 +120,10 @@ hello
 ex01
 intro
 '''
+rist = ['hello.py', 'ex01.py', 'intro.hwp']
+for var in rist:
+    foo = var.split('.')
+    print(f'158, {foo[0]}')
 
 '''
 159
@@ -102,6 +133,11 @@ intro
 intra.h
 define.h
 '''
+rist = ['intra.h', 'intra.c', 'define.h', 'run.py']
+for var in rist:
+    foo = var.split('.')
+    if foo[1] == 'h':
+        print(f'159, {var}')
 
 '''
 160
@@ -112,3 +148,8 @@ intra.h
 intra.c
 define.h
 '''
+rist = ['intra.h', 'intra.c', 'define.h', 'run.py']
+for var in rist:
+    foo = var.split('.')
+    if foo[1] == 'h' or foo[1] == 'c':
+        print(f'160, {var}')
