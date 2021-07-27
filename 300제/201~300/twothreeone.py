@@ -1,5 +1,10 @@
 '''
-오답현황(~)
+오답현황(~210727)
+236
+
+다시 풀어보기(~210727)
+233
+235
 
 '''
 '''
@@ -12,6 +17,7 @@ def n_plus_1 (n) :
 n_plus_1(3)
 print (result)
 '''
+# result가 정의되지 않았다는 오류가 발생
 
 '''
 232
@@ -20,14 +26,21 @@ print (result)
 make_url("naver")
 www.naver.com
 '''
+def make_url(site):
+    return f'www.{site}.com';
 
 '''
 233
-문자열을 입력받아 각 문자들로 구성된 리스트로 반환하는 make_list 함수를 정의하라.
+문자열을 입력받아 각 문자들로 구성된 리스트로 반환하는 make_list 함수를 정의하라.(두 줄로 구현해보기)
 
 make_list("abcd")
 ['a', 'b', 'c', 'd']
 '''
+def make_list (string) :
+    my_list = []
+    for 변수 in string :
+        my_list.append(변수)
+    return my_list
 
 '''
 234
@@ -36,14 +49,23 @@ make_list("abcd")
 pickup_even([3, 4, 5, 6, 7, 8])
 [4, 6, 8]
 '''
+def pickup_even(array):
+    result = [];
+    for element in array:
+        if element % 2 == 0:
+            result.append(element);
+    return result;
 
 '''
 235
-콤마가 포함된 문자열 숫자를 입력받아 정수로 변환하는 convert_int 함수를 정의하라.
+콤마가 포함된 문자열 숫자를 입력받아 정수로 변환하는 convert_int 함수를 정의하라.(replace 사용해보기)
 
 convert_int("1,234,567")
 1234567
 '''
+def convert_int(string):
+    foo = string.split(',');
+    return int(''.join(foo));
 
 '''
 236
@@ -68,6 +90,7 @@ def 함수(num) :
 c = 함수(함수(함수(10)))
 print(c)
 '''
+# 22
 
 '''
 238
@@ -83,6 +106,7 @@ a = 함수1(10)
 c = 함수2(a)
 print(c)
 '''
+# 140
 
 '''
 239
@@ -98,6 +122,7 @@ def 함수2(num) :
 c = 함수2(10)
 print(c)
 '''
+# 16
 
 '''
 240
@@ -116,3 +141,4 @@ def 함수2(num) :
 c = 함수2(2)
 print(c)
 '''
+# 28
