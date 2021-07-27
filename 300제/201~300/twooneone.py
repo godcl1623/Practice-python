@@ -1,6 +1,9 @@
 '''
-오답현황(~)
+오답현황(~210727)
+없음
 
+다시 풀어보기(~210727)
+220
 '''
 '''
 211
@@ -12,6 +15,10 @@ def 함수(문자열) :
 함수("안녕")
 함수("Hi")
 '''
+"""
+안녕
+Hi
+"""
 
 '''
 212
@@ -23,6 +30,10 @@ def 함수(a, b) :
 함수(3, 4)
 함수(7, 8)
 '''
+"""
+7
+15
+"""
 
 '''
 213
@@ -33,6 +44,7 @@ def 함수(문자열) :
 함수()
 TypeError: 함수() missing 1 required positional argument: '문자열'
 '''
+# 지수를 넣지 않고 함수를 실행해서
 
 '''
 214
@@ -44,26 +56,34 @@ def 함수(a, b) :
 함수("안녕", 3)
 TypeError: must be str, not int
 '''
+# 인수의 자료형이 일치하지 않아서
 
 '''
 215
 하나의 문자를 입력받아 문자열 끝에 ":D" 스마일 문자열을 이어 붙여 출력하는 print_with_smile 함수를 정의하라.
 '''
+def print_with_smile(string):
+    print(string, ':D');
 
 '''
 216
 215에서 정의한 함수를 호출하라. 파라미터는 "안녕하세요"로 입력하라.
 '''
+print_with_smile('안녕하세요');
 
 '''
 217
 현재 가격을 입력 받아 상한가 (30%)를 출력하는 print_upper_price 함수를 정의하라.
 '''
+def print_upper_price(price):
+    print(price * 1.3);
 
 '''
 218
 두 개의 숫자를 입력받아 두 수의 합을 출력하는 print_sum 함수를 정의하라.
 '''
+def print_sum(a, b):
+    print(a + b);
 
 '''
 219
@@ -75,8 +95,24 @@ print_arithmetic_operation(3, 4)
 3 * 4 = 12
 3 / 4 = 0.75
 '''
+def print_arithmetic_operation(a, b):
+    print(f'{a} + {b} = {a + b}');
+    print(f'{a} - {b} = {a - b}');
+    print(f'{a} * {b} = {a * b}');
+    print(f'{a} / {b} = {a / b}');
 
 '''
 220
 세 개의 숫자를 입력받아 가장 큰수를 출력하는 print_max 함수를 정의하라. 단 if 문을 사용해서 수를 비교하라.
 '''
+foo = input('첫 번째 숫자: ');
+bar = input('두 번째 숫자: ');
+baz = input('세 번째 숫자: ');
+def print_max(a, b, c):
+    if a > b > c or a > c > b:
+        print(a);
+    elif b > a > c or b > c > a:
+        print(b);
+    else:
+        print(c);
+print_max(int(foo), int(bar), int(baz))
