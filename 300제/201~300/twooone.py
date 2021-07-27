@@ -1,26 +1,37 @@
 '''
-오답현황(~)
-
+오답현황(~210727)
+없음
 '''
 '''
 201
 "비트코인" 문자열을 화면에 출력하는 print_coin() 함수를 정의하라.
 '''
+def print_coin():
+    print('비트코인');
 
 '''
 202
 201번에서 정의한 함수를 호출하라.
 '''
+print_coin();
 
 '''
 203
 201번에서 정의한 print_coin 함수를 100번호출하라.
 '''
+for index in range(100):
+    print(f'{index + 1}번째');
+    print_coin();
 
 '''
 204
 "비트코인" 문자열을 100번 화면에 출력하는 print_coins() 함수를 정의하라.
 '''
+def print_coins():
+    for index in range(100):
+        print(f'함수 버전 {index + 1}번째');
+        print_coin();
+print_coins();
 
 '''
 205
@@ -33,6 +44,7 @@ def hello():
 
 NameError: name 'hello' is not defined
 '''
+# 정의하기 전에 실행을 먼저 해서
 
 '''
 206
@@ -46,6 +58,13 @@ message()
 print("C")
 message()
 '''
+"""
+A
+B
+C
+A
+B
+"""
 
 '''
 207
@@ -59,6 +78,11 @@ def message() :
 print("C")
 message()
 '''
+"""
+A
+C
+B
+"""
 
 '''
 208
@@ -74,6 +98,13 @@ message1()
 print("E")
 message2()
 '''
+"""
+A
+C
+B
+E
+D
+"""
 
 '''
 209
@@ -88,6 +119,10 @@ def message2():
 
 message2()
 '''
+"""
+B
+A
+"""
 
 '''
 210
@@ -107,3 +142,12 @@ def message3():
 
 message3()
 '''
+"""
+B
+C
+B
+C
+B
+C
+A
+"""
