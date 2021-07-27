@@ -1,6 +1,9 @@
 '''
-오답현황(~)
-
+오답현황(~210727)
+226
+227
+229
+230
 '''
 '''
 221
@@ -9,6 +12,8 @@
 print_reverse("python")
 nohtyp
 '''
+def print_reverse(string):
+    print(string[::-1]);
 
 '''
 222
@@ -17,6 +22,8 @@ nohtyp
 print_score ([1, 2, 3])
 2.0
 '''
+def print_score(array):
+    print(sum(array) / len(array));
 
 '''
 223
@@ -27,6 +34,10 @@ print_even ([1, 3, 2, 10, 12, 11, 15])
 10
 12
 '''
+def print_even(array):
+    for element in array:
+        if element % 2 == 0:
+            print(element);
 
 '''
 224
@@ -37,21 +48,33 @@ print_keys ({"이름":"김말똥", "나이":30, "성별":0})
 나이
 성별
 '''
+def print_keys(object):
+    dictKey = list(object.keys());
+    for element in dictKey:
+        print(element);
 
 '''
 225
 my_dict에는 날짜를 키값으로 OHLC가 리스트로 저장돼 있다.
 
-my_dict = {"10/26" : [100, 130, 100, 100],
-           "10/27" : [10, 12, 10, 11]}
+my_dict = {
+    "10/26" : [100, 130, 100, 100],
+    "10/27" : [10, 12, 10, 11]
+}
 my_dict와 날짜 키값을 입력받아 OHLC 리스트를 출력하는 print_value_by_key 함수를 정의하라.
 
 print_value_by_key  (my_dict, "10/26")
 [100, 130, 100, 100]
 '''
+my_dict = {
+    "10/26" : [100, 130, 100, 100],
+    "10/27" : [10, 12, 10, 11]
+}
+def print_value_by_key(object, date):
+    print(object[date]);
 
 '''
-226
+226(못 풂)
 입력 문자열을 한 줄에 다섯글자씩 출력하는 print_5xn(string) 함수를 작성하라.
 
 print_5xn("아이엠어보이유알어걸")
@@ -60,7 +83,7 @@ print_5xn("아이엠어보이유알어걸")
 '''
 
 '''
-227
+227(못 풂)
 문자열과 한줄에 출력될 글자 수를 입력을 받아 한 줄에 입력된 글자 수만큼 출력하는 print_mxn(string) 함수를 작성하라.
 
 printmxn("아이엠어보이유알어걸", 3)
@@ -77,6 +100,8 @@ printmxn("아이엠어보이유알어걸", 3)
 calc_monthly_salary(12000000)
 1000000
 '''
+def calc_monthly_salary(number):
+    print(int(number / 12));
 
 '''
 229
