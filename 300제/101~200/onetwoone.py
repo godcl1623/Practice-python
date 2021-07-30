@@ -1,5 +1,5 @@
 '''
-오답현황(~210724)
+오답현황(~210730): 1번 풀이 완료
 123
 124
 '''
@@ -60,20 +60,14 @@ else:
 116700.00 원
 '''
 """
-환율표 = {
-    '달러': 1167,
-    '엔': 1.096,
-    '유로': 1268,
-    '위안': 171
-}
-foo = input('금액: ');
-bar = foo.split();
-[money, unit] = bar;
-print(f'{float(money) * 환율표[unit]} 원');
+table = {'달러': 1167, '엔': 1.096, '유로': 1268, '위안': 171}
+user_input = input('입력: ');
+[value, unit] = user_input.split();
+print(int(value) * table[unit]);
 """
 
 '''
-124 - 못 품
+124
 사용자로부터 세 개의 숫자를 입력 받은 후 가장 큰 숫자를 출력하라.
 
 >> input number1: 10
@@ -81,12 +75,13 @@ print(f'{float(money) * 환율표[unit]} 원');
 >> input number3: 20
 20
 '''
-"""
-foo = input('첫 번째 숫자를 입력해주세요: ');
-bar = input('두 번째 숫자를 입력해주세요: ');
-baz = input('세 번째 숫자를 입력해주세요: ');
-print(f'가장 큰 숫자는 {max(iterable)} 입니다.');
-"""
+user_input_1 = input('input number1: ');
+user_input_2 = input('input number2: ');
+user_input_3 = input('input number3: ');
+num1 = int(user_input_1);
+num2 = int(user_input_2);
+num3 = int(user_input_3);
+print(max(num1, num2, num3));
 
 '''
 125
@@ -239,6 +234,7 @@ closing_price	최근 24시간 내 마지막 거래금액
 min_price	최근 24시간 내 최저 거래금액
 max_price	최근 24시간 내 최고 거래금액
 '''
+"""
 import requests
 btc = requests.get("https://api.bithumb.com/public/ticker/").json()['data']
 opening_price, min_price, max_price = btc;
@@ -247,3 +243,4 @@ if (opening_price + gap) > max_price:
     print('상승장');
 else:
     print('하락장');
+"""
