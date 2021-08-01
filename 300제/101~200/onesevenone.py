@@ -2,8 +2,9 @@
 오답현황(~210725)
 오답 없음
 
-다시 풀어보기(~210725)
-전부
+다시 풀어보기(~210801): 172 제외 1회 풀이 완료
+172 2번
+나머지 1번
 '''
 '''
 171
@@ -16,6 +17,8 @@ price_list = [32100, 32150, 32000, 32500]
 32500
 '''
 price_list = [32100, 32150, 32000, 32500]
+for index in range(len(price_list)):
+    print(price_list[index]);
 
 '''
 172
@@ -27,7 +30,6 @@ price_list = [32100, 32150, 32000, 32500]
 2 32000
 3 32500
 '''
-price_list = [32100, 32150, 32000, 32500]
 
 '''
 173
@@ -40,6 +42,8 @@ price_list = [32100, 32150, 32000, 32500]
 0 32500
 '''
 price_list = [32100, 32150, 32000, 32500]
+for index in range(len(price_list)):
+    print(f'{(len(price_list) - 1) - index} {price_list[index]}');
 
 '''
 174
@@ -51,6 +55,8 @@ price_list = [32100, 32150, 32000, 32500]
 120 32500
 '''
 price_list = [32100, 32150, 32000, 32500]
+for index in range(1, len(price_list)):
+    print(f'{100 + 10*(index - 1)} {price_list[index]}');
 
 '''
 175
@@ -62,6 +68,8 @@ my_list = ["가", "나", "다", "라"]
 다 라
 '''
 my_list = ["가", "나", "다", "라"]
+for index in range(len(my_list) - 1):
+    print(my_list[index], my_list[index + 1]);
 
 '''
 176
@@ -73,6 +81,8 @@ my_list = ["가", "나", "다", "라", "마"]
 다 라 마
 '''
 my_list = ["가", "나", "다", "라", "마"]
+for index in range(len(my_list) - 2):
+    print(my_list[index], my_list[index + 1], my_list[index + 2]);
 
 '''
 177
@@ -84,6 +94,8 @@ my_list = ["가", "나", "다", "라"]
 나 가
 '''
 my_list = ["가", "나", "다", "라"]
+for index in range(1, len(my_list)):
+    print(my_list[len(my_list) - index], my_list[len(my_list) - index - 1]);
 
 '''
 178
@@ -97,6 +109,8 @@ my_list = [100, 200, 400, 800]
 400
 '''
 my_list = [100, 200, 400, 800]
+for index in range(len(my_list) - 1):
+    print(my_list[index + 1] - my_list[index]);
 
 '''
 179
@@ -111,6 +125,8 @@ my_list = [100, 200, 400, 800, 1000, 1300]
 1033.3333333333333
 '''
 my_list = [100, 200, 400, 800, 1000, 1300]
+for index in range(len(my_list) - 2):
+    print((my_list[index] + my_list[index + 1] + my_list[index + 2]) / 3);
 
 '''
 180
@@ -122,3 +138,6 @@ high_prices = [150, 300, 430, 880, 1000]
 low_prices  = [100, 200, 400, 800, 1000]
 high_prices = [150, 300, 430, 880, 1000]
 volatility = []
+for index in range(len(high_prices)):
+    volatility.append(high_prices[index] - low_prices[index]);
+print(volatility);
