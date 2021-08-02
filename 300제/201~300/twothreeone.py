@@ -1,9 +1,9 @@
 '''
-오답현황(~210727)
+오답현황(~210802): 1회 풀이 완료
 236
 
-다시 풀어보기(~210727)
-233
+다시 풀어보기(~210802): 235 1회 풀이 완료
+233 2번
 235
 
 '''
@@ -36,11 +36,13 @@ def make_url(site):
 make_list("abcd")
 ['a', 'b', 'c', 'd']
 '''
+"""
 def make_list (string) :
     my_list = []
     for 변수 in string :
         my_list.append(변수)
     return my_list
+"""
 
 '''
 234
@@ -63,9 +65,14 @@ def pickup_even(array):
 convert_int("1,234,567")
 1234567
 '''
+"""
 def convert_int(string):
     foo = string.split(',');
     return int(''.join(foo));
+"""
+def convert_int(string):
+    return int(string.replace(',', ''));
+print(convert_int("1,234,567"))
 
 '''
 236
@@ -79,6 +86,7 @@ b = 함수(a)
 c = 함수(b)
 print(c)
 '''
+# 22
 
 '''
 237

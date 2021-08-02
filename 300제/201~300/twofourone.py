@@ -6,14 +6,17 @@
 241 현재시간
 datetime 모듈을 사용해서 현재 시간을 화면에 출력해보세요.
 '''
+import datetime;
+print(datetime.datetime.now());
 
 '''
 242 현재시간의 타입
 datetime 모듈의 now 함수의 리턴 값의 타입을 화면에 출력해보세요.
 '''
+print(type(datetime.datetime.now()));
 
 '''
-243 timedelta
+243 timedelta(못풂)
 datetime 모듈의 timedelta를 사용해서 오늘로부터 5일, 4일, 3일, 2일, 1일 전의 날짜를 화면에 출력해보세요.
 '''
 

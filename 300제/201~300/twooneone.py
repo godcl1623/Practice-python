@@ -2,7 +2,7 @@
 오답현황(~210727)
 없음
 
-다시 풀어보기(~210727)
+다시 풀어보기(~210802)
 220
 '''
 '''
@@ -103,16 +103,8 @@ def print_arithmetic_operation(a, b):
 
 '''
 220
-세 개의 숫자를 입력받아 가장 큰수를 출력하는 print_max 함수를 정의하라. 단 if 문을 사용해서 수를 비교하라.
+세 개의 숫자를 입력받아 가장 큰수를 출력하는 print_max 함수를 정의하라. 단 if 문을 사용해서 수를 비교하라.(변수에 값을 할당하는 형태로 비교할 것)
 '''
 foo = input('첫 번째 숫자: ');
 bar = input('두 번째 숫자: ');
 baz = input('세 번째 숫자: ');
-def print_max(a, b, c):
-    if a > b > c or a > c > b:
-        print(a);
-    elif b > a > c or b > c > a:
-        print(b);
-    else:
-        print(c);
-print_max(int(foo), int(bar), int(baz))

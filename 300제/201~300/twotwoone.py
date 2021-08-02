@@ -1,5 +1,5 @@
 '''
-오답현황(~210727)
+오답현황(~210802): 전체 1번 풀이 완료
 226
 227
 229
@@ -74,8 +74,8 @@ def print_value_by_key(object, date):
     print(object[date]);
 
 '''
-226(못 풂)
-입력 문자열을 한 줄에 다섯글자씩 출력하는 print_5xn(string) 함수를 작성하라.
+226
+입력 문자열을 한 줄에 다섯글자씩 출력하는 print_5xn(string) 함수를 작성하라.(낭비되는 코드 없도록 주의)
 
 print_5xn("아이엠어보이유알어걸")
 아이엠어보
@@ -83,7 +83,7 @@ print_5xn("아이엠어보이유알어걸")
 '''
 
 '''
-227(못 풂)
+227
 문자열과 한줄에 출력될 글자 수를 입력을 받아 한 줄에 입력된 글자 수만큼 출력하는 print_mxn(string) 함수를 작성하라.
 
 printmxn("아이엠어보이유알어걸", 3)
@@ -92,6 +92,11 @@ printmxn("아이엠어보이유알어걸", 3)
 유알어
 걸
 '''
+def printmxn(string, length):
+    crit = int(len(string) / length);
+    for index in range(crit + 1):
+        print(string[0 + length * index : length + length * index]);
+printmxn("아이엠어보이유알어걸", 3)
 
 '''
 228
