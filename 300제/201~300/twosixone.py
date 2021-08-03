@@ -1,8 +1,8 @@
 '''
-오답현황(~210729)
+오답현황(~210803): 265, 266 1번 풀이
 265
 266
-270
+270 2번
 
 '''
 '''
@@ -81,11 +81,49 @@ a.set_code("005930")
 
 삼성 = Stock("삼성전자", "005930")
 '''
+"""
+class Stock:
+    def __init__(self, title, code):
+        self.title = title;
+        self.code = code;
+        print(title, code);
+
+    def set_name(self, title):
+        self.title = title;
+        print(f'종목명: {self.title}');
+
+    def set_code(self, code):
+        self.code = code;
+        print(f'코드: {self.code}');
+
+삼성 = Stock("삼성전자", "005930")
+"""
 
 '''
 266 객체의 속성값 업데이트
 생성자에서 종목명, 종목코드, PER, PBR, 배당수익률을 입력 받을 수 있도록 생성자를 수정하세요. PER, PBR, 배당수익률은 float 타입입니다.(추가 문제: float 타입 설정이 필요한가?)
 '''
+"""
+class Stock:
+    def __init__(self, title, code):
+        self.title = title;
+        self.code = code;
+        print(title, code, per, pbr, income);
+
+    def set_name(self, title):
+        self.title = title;
+        print(f'종목명: {self.title}');
+
+    def set_code(self, code):
+        self.code = code;
+        print(f'코드: {self.code}');
+
+    def get_name(self):
+        print(self.title);
+
+    def get_code(self):
+        print(self.code);
+"""
 
 '''
 267 객체 생성
