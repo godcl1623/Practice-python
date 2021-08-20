@@ -1,5 +1,5 @@
 class Node:
-    def __init__(self, data, prev=None, next=None):
+    def __init__(self, data, prev = None, next = None):
         self.data = data
         self.prev = prev
         self.next = next
@@ -9,10 +9,9 @@ class NodeMgmt:
         self.head = Node(data)
         self.tail = self.head
 
-    def insert(self, data):
-        if self.head == '':
+    def add(self, data):
+        if self.head == None:
             self.head = Node(data)
-            self.tail = self.head
         else:
             node = self.head
             while node.next:
@@ -23,33 +22,87 @@ class NodeMgmt:
             self.tail = new
 
     def desc(self):
-        node = self.head
-        while node:
-            print(node.data)
-            node = node.next
-
-    def delete(self, data):
-        if self.head == '':
-            print('데이터가 없습니다')
-
-        if self.head.data == data:
-            temp = self.head
-            self.head = self.head.next
-            del temp
+        if self.head == None:
+            print('현재 저장된 자료가 없습니다')
+            return
         else:
             node = self.head
             while node.next:
-                if node.next.data == data:
+                print(node.data)
+                node = node.next
+            print(node.data)
+            return
+
+    def headSearch(self, find):
+        if self.head == None:
+            print('현재 저장된 자료가 없습니다')
+            return
+        else:
+            node = self.head
+            while node.next:
+                if node.data == find:
+                    print(node)
+                    return
+                    # return node
+                else:
+                    node = node.next
+            if node.data == find:
+                print(node)
+                return
+                # return node
+            else:
+                print('찾는 자료가 없습니다')
+                return
+
+    def tailSearch(self, find):
+        if self.head == None:
+            print('현재 저장된 자료가 없습니다')
+        else:
+            node = self.tail
+            while node.prev:
+                if node.data == find:
+                    print(node)
+                    return
+                else:
+                    node = node.prev
+            if node.data == find:
+                print(node)
+                return
+            else:
+                print('찾는 자료가 없습니다')
+                return
+
+    def remove(self, find):
+        if self.head == None:
+            print('현재 저장된 자료가 없습니다')
+            return
+        if self.head.data == find:
+            temp = self.head
+            self.head = temp.next
+            self.head.prev = None
+            del temp
+            return
+        elif self.tail.data == find:
+            temp = self.tail
+            self.tail = temp.prev
+            self.tail.next = None
+            del temp
+            return
+        else:
+            node = self.head
+            while node.next:
+                if node.next.data == find:
                     temp = node.next
-                    node.next = node.next.next
+                    node.next = temp.next
+                    node.next.prev = node
                     del temp
-                    pass
+                    return
                 else:
                     node = node.next
 
-doublink = NodeMgmt(0);
+dlink = NodeMgmt(0)
 for index in range(1, 10):
-    doublink.insert(index)
-doublink.delete(9)
-doublink.desc();
-# print(doublink.tail.data)
+    dlink.add(index)
+dlink.remove(9)
+dlink.desc()
+print(dlink.tail.next)
