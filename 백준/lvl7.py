@@ -116,6 +116,7 @@ for i in temp:
   result.append(phoneTime[i]);
 print(sum(result))
 '''
+'''
 # 2941 크로아티아 알파벳 - 다시풀기 + replace() 메서드 체크
 croatia = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
 word = input()
@@ -123,3 +124,27 @@ word = input()
 for i in croatia :
     word = word.replace(i, '*')  # input 변수와 동일한 이름의 변수
 print(len(word))
+'''
+'''
+# 1316번 그룹 단어 체커
+number = int(input());
+words = [];
+for i in range(number):
+  words.append(input());
+
+count = 0;
+for i in words:
+  temp = [];
+  for index, letter in enumerate(i):
+    if letter in temp:
+      if temp[index - 1] == letter:
+        temp.append(letter);
+      else:
+        break;
+    else:
+      temp.append(letter);
+  if ''.join(temp) == i:
+    count += 1;
+
+print(count);
+'''
