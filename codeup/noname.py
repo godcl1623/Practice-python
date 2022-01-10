@@ -21,5 +21,31 @@
 94: 모든 input을 활용할 것
 97: O(n^2) 이내로 작성
 '''
-# a, b, c = map(int, input().split())
+'''
+22.01.10 오답
+27, 29, 42~43, 46, 52~53, 56~57, 59~63, 78~79, 82, 84~90
+'''
+# a, b = map(int, input().split())
 # a = int(input())
+# a = input()
+# a, b, c = map(int, input().split())
+# a = list(map(int, input().split()))
+# a, b, c, d = map(int, input().split())
+# print(min(numsList))
+field = [list(map(int, input().split())) for i in range(10)]
+x, y = 1, 1
+for i in range(1, len(field)):
+  for j in range(x, len(field[i])):
+    if field[i][j] == 0:
+      field[i][j] = 9
+    elif field[i][j] == 1:
+      x = j - 1
+      break
+    elif field[i][j] == 2:
+      field[i][j] = 9
+      x = len(field[i])
+      break
+for i in range(len(field)):
+  for j in range(len(field)):
+    print(field[i][j], end=' ')
+  print()
