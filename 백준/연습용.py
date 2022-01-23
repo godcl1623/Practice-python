@@ -45,3 +45,47 @@ for i in dirs:
     count += 1
 print(count)
 '''
+'''
+n, m = map(int, input().split())
+a, b, d = map(int, input().split())
+field = [list(map(int, input().split())) for i in range(n)]
+visited = [[0 for i in range(m)] for j in range(n)]
+visited[a][b] = 1
+da = [-1, 0, 1, 0]
+db = [0, 1, 0, -1]
+def turn_left():
+  global d
+  d -= 1
+  if d == -1:
+    d = 3
+count = 1
+turn_time = 0
+attempt = 1
+while True:
+  turn_left()
+  turn_time += 1
+  na = a + da[d]
+  nb = b + db[d]
+  if turn_time < 4:
+    if visited[na][nb] == 0 and field[na][nb] == 0:
+      a = na
+      b = nb
+      visited[a][b] = 1
+      turn_time = 0
+      count += 1
+      attempt += 1
+    else:
+      attempt += 1
+      continue
+  else:
+    na = a - da[d]
+    nb = b - db[d]
+    if field[na][nb] != 1:
+      a = na
+      b = nb
+      turn_time = 0
+      attempt += 1
+    else:
+      break
+print(count)
+'''
