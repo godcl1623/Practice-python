@@ -52,59 +52,39 @@ for _ in range(cases):
 		for 루프를 도는 대상 리스트는 마지막 톱니가 00000010으로 저장된 상태에서 루프를 계속 돌게되기 때문에 불일치가 발생, value error의 원인이 되는 것으로 보임
 '''
 gears = [list(input()) for _ in range(4)]
-rotates = int(input())
-cases = [list(map(int, input().split())) for _ in range(rotates)]
-print('############### "original" ###############')
-for i in gears:
-	for j in i:
-		print(j, end=' ')
-	print()
-def rotate(gear, dir):
-	global gears
-	idx = gears.index(gear)
+turns = int(input())
+def rotate(gear_idx, dir):
 	if dir == 1:
-		temp = gears[idx][0:7]
-		gears[idx] = [gear[7]] + temp
+		temp = gears[gear_idx][-1]
+		del gears[gear_idx][-1]
+		gears[gear_idx].insert(0, temp)
 	else:
-		temp = gear[0]
-		del gear[0]
-		gear.append(temp)
-		gears[idx] = gear
-for case in cases:
-	rotated, dir = (case[0] - 1), case[1]
+		temp = gears[gear_idx][0]
+		del gears[gear_idx][0]
+		gears[gear_idx].append(temp)
+attempt = 1
+for _ in range(turns):
+	gear_idx, dir = map(int, input().split())
 	histdir = dir
-	idx = rotated
-	# for gear in gears[rotated:]:
-	while idx < 3:
-		# if gears.index(gear) == 3:
-		# 	break
-		# else:
-			# if gears[gears.index(gear) + 1][6] != gear[2]:
-			if gears[idx + 1][6] != gears[idx][2]:
-				histdir *= -1
-				# rotate(gears[gears.index(gear) + 1], histdir)
-				rotate(gears[idx + 1], histdir)
-			else:
-				break
-			idx += 1
-		# print(gears)
-	idx = rotated
-	# for gear in gears[:rotated + 1][::-1]:
-	while idx > 0:
-		# if gears.index(gear) == 0:
-		# 	break
-		# else:
-			# if gears[gears.index(gear) - 1][2] != gear[6]:
-			if gears[idx - 1][2] != gears[idx][6]:
-				histdir *= -1
-				# rotate(gears[gears.index(gear) - 1], histdir)
-				rotate(gears[idx - 1], histdir)
-			else:
-				break
-	rotate(gears[rotated], dir)
-	print('############### "after rotate" ###############')
-	# print(gears)
-	for i in gears:
-		for j in i:
-			print(j, end=' ')
-		print()
+	curr_idx = gear_idx  - 1
+	while curr_idx < 3:
+		if gears[curr_idx + 1][6] != gears[curr_idx][2]:
+			histdir *= -1
+			rotate(curr_idx + 1, histdir)
+			curr_idx += 1
+		else:
+			break
+	curr_idx = gear_idx - 1
+	while curr_idx > 0:
+		if gears[curr_idx - 1][2] != gears[curr_idx][6]:
+			histdir *= -1
+			rotate(curr_idx - 1, histdir)
+			curr_idx -= 1
+		else:
+			break
+	curr_idx = gear_idx - 1
+	rotate(curr_idx, dir)
+score = 0
+for i in range(len(gears)):
+	score += (int(gears[i][0]) * (2 ** i))
+print(score)
