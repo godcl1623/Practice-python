@@ -51,40 +51,62 @@ for _ in range(cases):
 		위 예제에서 (3, -1) 회전을 진행하면 맨 마지막 톱니가 00000001로 변하는데,
 		for 루프를 도는 대상 리스트는 마지막 톱니가 00000010으로 저장된 상태에서 루프를 계속 돌게되기 때문에 불일치가 발생, value error의 원인이 되는 것으로 보임
 '''
-gears = [list(input()) for _ in range(4)]
-turns = int(input())
-def rotate(gear_idx, dir):
-	if dir == 1:
-		temp = gears[gear_idx][-1]
-		del gears[gear_idx][-1]
-		gears[gear_idx].insert(0, temp)
+# 2217
+'''
+# 오답
+ropes_num = int(input())
+ropes = []
+for _ in range(ropes_num):
+	ropes.append(int(input()))
+if min(ropes) * ropes_num >= max(ropes):
+	print(min(ropes) * ropes_num)
+else:
+	print(max(ropes))
+'''
+'''
+# 오답 2
+ropes_num = int(input())
+ropes = []
+for _ in range(ropes_num):
+	ropes.append(int(input()))
+count = 1
+idx = 0
+max_idx = ropes_num
+max = max(ropes)
+while count <= ropes_num:
+	if ropes[idx] * count > max:
+		max = ropes[idx] * count
 	else:
-		temp = gears[gear_idx][0]
-		del gears[gear_idx][0]
-		gears[gear_idx].append(temp)
-attempt = 1
-for _ in range(turns):
-	gear_idx, dir = map(int, input().split())
-	histdir = dir
-	curr_idx = gear_idx  - 1
-	while curr_idx < 3:
-		if gears[curr_idx + 1][6] != gears[curr_idx][2]:
-			histdir *= -1
-			rotate(curr_idx + 1, histdir)
-			curr_idx += 1
+		if idx != max_idx - 1:
+			idx += 1
 		else:
-			break
-	curr_idx = gear_idx - 1
-	while curr_idx > 0:
-		if gears[curr_idx - 1][2] != gears[curr_idx][6]:
-			histdir *= -1
-			rotate(curr_idx - 1, histdir)
-			curr_idx -= 1
-		else:
-			break
-	curr_idx = gear_idx - 1
-	rotate(curr_idx, dir)
-score = 0
-for i in range(len(gears)):
-	score += (int(gears[i][0]) * (2 ** i))
-print(score)
+			idx = 0
+			max_idx -= 1
+			count += 1
+print(max)
+'''
+'''
+힌트: 가장 작은 무게를 들 수 있는 로프가 들 수 있는 질량 * 병렬 연결 로프 갯수 = 최종 무게
+'''
+'''
+# 정답
+ropes_num = int(input())
+ropes = []
+for _ in range(ropes_num):
+	ropes.append(int(input()))
+ropes.sort(reverse=True)
+max = max(ropes)
+for i in range(len(ropes)):
+	comp = ropes[i] * (i + 1)
+	if comp > max:
+		max = comp
+print(max)
+'''
+'''
+# 10817(구현)
+# 정답
+nums = list(map(int, input().split()))
+biggest = max(nums)
+nums.remove(biggest)
+print(max(nums))
+'''
