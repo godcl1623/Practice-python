@@ -6,47 +6,81 @@
 10872(O), 1924(△)
 
 자료구조, 알고리즘별 문제 출제 방식 체크용 예제 1~2개 풀어보기
+# 배열
+# 큐
+10845(O)
+# 스택
+3986(O)
+# 링크드 리스트(= 연결 리스트)
+2605(△) - 참조: https://heewon9809.tistory.com/264
+# 해쉬
+# 트리
+# 힙
 '''
 '''
-# 1339 정답
+# 10845
 import sys
-word_nums = int(sys.stdin.readline())
-words_list = []
-for _ in range(word_nums):
-	words_list.append(sys.stdin.readline().rstrip())
-words_vals = {}
-for i in range(word_nums):
-	for j in range(len(words_list[i])):
-		if words_list[i][j] in words_vals:
-			words_vals[words_list[i][j]] += 10 ** (len(words_list[i]) - 1 - j)
+cmds_num = int(sys.stdin.readline())
+q = []
+for i in range(cmds_num):
+	cmd_input = sys.stdin.readline().split()
+	if cmd_input[0] == 'push':
+		q.append(int(cmd_input[1]))
+	elif cmd_input[0] == 'pop':
+		if len(q) == 0:
+			print(-1)
 		else:
-			words_vals[words_list[i][j]] = 10 ** (len(words_list[i]) - 1 - j)
-numsList = []
-for value in words_vals.values():
-	numsList.append(value)
-numsList.sort(reverse=True)
-sum = 0
-curr_num = 9
-for num in numsList:
-	sum += num * curr_num
-	curr_num -= 1
-print(sum)
+			temp = q[0]
+			del q[0]
+			print(temp)
+	elif cmd_input[0] == 'size':
+		print(len(q))
+	elif cmd_input[0] == 'empty':
+		if len(q) == 0:
+			print(1)
+		else:
+			print(0)
+	elif cmd_input[0] == 'front':
+		if len(q) == 0:
+			print(-1)
+		else:
+			print(q[0])
+	elif cmd_input[0] == 'back':
+		if len(q) == 0:
+			print(-1)
+		else:
+			print(q[-1])
 '''
-# 2007
+'''
+# 3986
 import sys
-m, d = map(int, sys.stdin.readline().split())
-last_day = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-date = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
-init_date_idx = d % 7
-if m == 1:
-	print(date[init_date_idx])
-elif m > 1 and m <= 3:
-	init_date_idx += 3
-	print(date[init_date_idx % 7])
-else:
-	init_date_idx += 3
-	new_last_day = last_day[2:m - 1]
-	thirty_ones = new_last_day.count(31)
-	thirties = new_last_day.count(30)
-	init_date_idx += (3 * thirty_ones) + (2 * thirties)
-	print(date[init_date_idx % 7])
+words_num = int(sys.stdin.readline())
+count = 0
+for _ in range(words_num):
+	word = sys.stdin.readline().rstrip()
+	stk = []
+	for i in word:
+		if len(stk) == 0:
+			stk.append(i)
+		else:
+			if stk[-1] == i:
+				del stk[-1]
+			else:
+				stk.append(i)
+	if len(stk) == 0:
+		count += 1
+print(count)
+'''
+n = int(input())
+cards = list(map(int, input().split()))
+students = [i + 1 for i in range(n)]
+order = {}
+curr_idx = 0
+while len(order.keys()) != len(students):
+	order[curr_idx] = [curr_idx - cards[curr_idx], students[curr_idx]]
+	curr_idx += 1
+new_list = []
+for i in order.values():
+	new_list.insert(i[0], i[1])
+for i in new_list:
+	print(i, end=' ')
