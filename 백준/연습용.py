@@ -6,6 +6,7 @@
 10872(O), 1924(△)
 
 자료구조, 알고리즘별 문제 출제 방식 체크용 예제 1~2개 풀어보기
+## 자료구조
 # 배열
 # 큐
 10845(O)
@@ -18,6 +19,11 @@
 # 트리
 14425(X) - 참조: https://jinho-study.tistory.com/980
 # 힙
+## 알고리즘
+# DFS
+2210
+# BFS
+16948
 '''
 '''
 # 9375(답안)
@@ -129,6 +135,8 @@ for _ in range(m):
 
 print(count)
 '''
+'''
+# 14425
 import sys
 input = sys.stdin.readline
 n, m = map(int, input().split())
@@ -139,3 +147,4 @@ for _ in range(m):
 	if t in s:
 		cnt += 1
 print(cnt)
+'''
