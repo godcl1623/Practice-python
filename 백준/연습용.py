@@ -21,7 +21,7 @@
 # 힙
 ## 알고리즘
 # DFS
-2210
+2210(X)
 # BFS
 16948
 '''
@@ -148,3 +148,26 @@ for _ in range(m):
 		cnt += 1
 print(cnt)
 '''
+from collections import deque
+n = int(input())
+sr, sc, er, ec = map(int, input().split())
+movements = [(-2, -1), (-2, 1), (0, -2), (0, 2), (2, -1), (2, 1)]
+map = [[-1] * n for _ in range(n)]
+def bfs(x, y):
+	q = deque()
+	q.append((x, y))
+	map[x][y] = 0
+	while q:
+		x, y = q.popleft()
+		for i, j in movements:
+			X, Y = x + i, y + j
+			if (0 <= X < n) and (0 <= Y < n) and map[X][Y] == -1:
+				q.append((X, Y))
+				map[X][Y] = map[x][y] + 1
+
+bfs(sr, sc)
+for i in range(n):
+	for j in range(n):
+		print(map[i][j], end=' ')
+	print()
+print(map[er][ec])
