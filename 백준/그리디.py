@@ -1,47 +1,17 @@
 import time
 '''
 # 11399 ATM
-people = int(input())
-ttw = list(map(int, input().split()))
-ttw.sort()
-total_time = 0
-next = 0
-for i in ttw:
-  next += i
-  total_time += next
-print(total_time)
-'''
-'''
 # 11047. 동전 0
-n, k = map(int, input().split())
-coins = []
-for _ in range(n):
-  coins.append(int(input()))
-coin_num = 0
-idx = 0
-while k != 0:
-  if idx == len(coins):
-    break
-  if k - coins[::-1][idx] < 0:
-    idx += 1
-    continue
-  k -= coins[::-1][idx]
-  coin_num += 1
-print(coin_num)
-'''
-'''
 # 1541. 잃어버린 괄호 - 못풂
 '''
 start_time = time.time()
 #######################################################
-arr = input().split('-')
-s = 0
-for i in arr[0].split('+'):
-  s += int(i)
-for i in arr[1:]:
-  for j in i.split('+'):
-    s -= int(j)
-print(s)
+import sys
+from collections import deque
+input = sys.stdin.readline
+n = int(input())
+buy_cases = deque(map(int, input().split()))
+
 
 #######################################################
 end_time = time.time()

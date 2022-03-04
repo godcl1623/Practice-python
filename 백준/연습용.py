@@ -148,26 +148,92 @@ for _ in range(m):
 		cnt += 1
 print(cnt)
 '''
-from collections import deque
-n = int(input())
-sr, sc, er, ec = map(int, input().split())
-movements = [(-2, -1), (-2, 1), (0, -2), (0, 2), (2, -1), (2, 1)]
-map = [[-1] * n for _ in range(n)]
-def bfs(x, y):
-	q = deque()
-	q.append((x, y))
-	map[x][y] = 0
-	while q:
-		x, y = q.popleft()
-		for i, j in movements:
-			X, Y = x + i, y + j
-			if (0 <= X < n) and (0 <= Y < n) and map[X][Y] == -1:
-				q.append((X, Y))
-				map[X][Y] = map[x][y] + 1
+# from collections import deque
+# import sys
+# input = sys.stdin.readline
+# r, c = map(int, input().split())
+# dx = [-1, 1, 0, 0]
+# dy = [0, 0, -1, 1]
+# map = [list(input().rstrip()) for _ in range(r)]
+# empty_map = [[0] * c for _ in range(r)]
+# sheep = 0
+# wolf = 0
+# def bfs(x, y):
+# 	q = deque()
+# 	q.append((x, y))
+# 	empty_map[x][y] = 1
+# 	wolf_res, sheep_res = 0, 0
+# 	while q:
+# 		x, y = q.popleft()
+# 		if map[x][y] == 'v':
+# 			wolf_res += 1
+# 		elif map[x][y] == 'k':
+# 			sheep_res += 1
+# 		for i in range(4):
+# 			nx = x + dx[i]
+# 			ny = y + dy[i]
+# 			if 0 <= nx < r and 0 <= ny < c:
+# 				if map[nx][ny] != '#' and not empty_map[nx][ny]:
+# 					empty_map[nx][ny] = 1
+# 					q.append((nx, ny))
+# 	if wolf_res >= sheep_res:
+# 		sheep_res = 0
+# 	else:
+# 		wolf_res = 0
+# 	return [wolf_res, sheep_res]
 
-bfs(sr, sc)
-for i in range(n):
-	for j in range(n):
-		print(map[i][j], end=' ')
-	print()
-print(map[er][ec])
+# for i in range(r):
+# 	for j in range(c):
+# 		if map[i][j] != '#' and not empty_map[i][j]:
+# 			wolf_res, sheep_res = bfs(i, j)
+# 			wolf += wolf_res
+# 			sheep += sheep_res
+# print(wolf, sheep)
+# r, c = map(int, input().split())
+# map = [list(input()) for _ in range(r)]
+# sheep = []
+# wolf = []
+# result = []
+# def dfs(x, y):
+# 	if x <= -1 or x >= r or y <= -1 or y >= c:
+# 		return False
+# 	if map[x][y] != '#':
+# 		result.append(map[x][y])
+# 		map[x][y] = '#'
+# 		dfs(x + 1, y)
+# 		dfs(x - 1, y)
+# 		dfs(x, y + 1)
+# 		dfs(x, y - 1)
+# 		return True
+# 	return False
+# for i in range(r):
+# 	for j in range(c):
+# 		if map[i][j] != '#':
+# 			dfs(i, j)
+# 			if result.count('v') < result.count('k'):
+# 				sheep.append(result.count('k'))
+# 			else:
+# 				wolf.append(result.count('v'))
+# 			result = []
+# print(sum(sheep), sum(wolf))
+
+r, c = map(int, input().split())
+map = [list(input()) for _ in range(r)]
+sheep = 0
+wolf = 0
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
+def dfs(x, y):
+	if map[x][y] == 'v':
+		wolf += 1
+	elif map[x][y] == 'k':
+		sheep += 1
+	for i in range(4):
+		nx = x + dx[i]
+		ny = y + dy[i]
+		if 0 <= nx < r and 0 <= ny < c:
+			dfs(nx, ny)
+for i in range(r):
+	for j in range(c):
+		dfs(i, j)
+print(sheep, wolf)
