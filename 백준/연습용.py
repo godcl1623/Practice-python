@@ -217,23 +217,80 @@ print(cnt)
 # 			result = []
 # print(sum(sheep), sum(wolf))
 
-r, c = map(int, input().split())
-map = [list(input()) for _ in range(r)]
-sheep = 0
-wolf = 0
-dx = [-1, 1, 0, 0]
-dy = [0, 0, -1, 1]
-def dfs(x, y):
-	if map[x][y] == 'v':
-		wolf += 1
-	elif map[x][y] == 'k':
-		sheep += 1
-	for i in range(4):
-		nx = x + dx[i]
-		ny = y + dy[i]
-		if 0 <= nx < r and 0 <= ny < c:
-			dfs(nx, ny)
-for i in range(r):
-	for j in range(c):
-		dfs(i, j)
-print(sheep, wolf)
+# r, c = map(int, input().split())
+# map = [list(input()) for _ in range(r)]
+# sheep = 0
+# wolf = 0
+# dx = [-1, 1, 0, 0]
+# dy = [0, 0, -1, 1]
+# def dfs(x, y):
+# 	if map[x][y] == 'v':
+# 		wolf += 1
+# 	elif map[x][y] == 'k':
+# 		sheep += 1
+# 	for i in range(4):
+# 		nx = x + dx[i]
+# 		ny = y + dy[i]
+# 		if 0 <= nx < r and 0 <= ny < c:
+# 			dfs(nx, ny)
+# for i in range(r):
+# 	for j in range(c):
+# 		dfs(i, j)
+# print(sheep, wolf)
+'''
+# 2022-03-14 DFS 오답 대상: 백준 2606
+# num = int(input())
+# case = int(input())
+# coms = [[] for _ in range(num + 1)]
+# infected = [False for _ in range(num + 1)]
+# infected[0] = True
+# def dfs(coms, start, infected):
+# 	if start > num:
+# 		return
+# 	if infected[start - 1] == True:
+# 		dfs(coms, start + 1, infected)
+# 	else:
+# 		for i in coms:
+# 			if start == i[1]:
+# 				if infected[i[0] - 1] == True:
+# 					infected[start - 1] = True
+# 		dfs(coms, start + 1, infected)
+# dfs(coms, 1, infected)
+# print(infected.count(True) - 1)
+# def dfs(coms, start, visited):
+# 	global cnt
+# 	visited[start] = True
+# 	for i in coms[start]:
+# 		if not visited[i]:
+# 			cnt += 1
+# 			dfs(coms, i, visited)
+# cnt = 0
+
+# for i in range(case):
+# 	node1, node2 = map(int, input().split())
+# 	coms[node1].append(node2)
+# 	coms[node2].append(node1)
+# 	print(coms)
+# dfs(coms, 1, infected)
+# print(infected)
+# print(cnt)
+'''
+s = "RLRRLLRLRL"
+st = 0
+cnt = 0
+rs = 0
+ls = 0
+while len(s) > 0:
+		for i in range(len(s)):
+				if rs > 0 and ls > 0 and rs == ls:
+						break
+				if s[i] == 'R':
+						rs += 1
+				else:
+						ls += 1
+		st = rs + ls
+		s = s[st:]
+		rs = 0
+		ls = 0
+		cnt += 1
+print(cnt)

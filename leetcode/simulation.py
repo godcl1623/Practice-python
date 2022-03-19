@@ -1,9 +1,7 @@
 '''
 # 오답 및 풀이 현황
 67. Add Binary ○(3/6)
-1920. Build Array from Permutation(3/6)
-2011. Final Value of Variable After Performing Operations(3/6)
-1603. Design Parking System(3/6)
+1603. Design Parking System(3/6) - 작성했던 풀이와 다르게 풀 것
 '''
 import time
 start_time = time.time()
